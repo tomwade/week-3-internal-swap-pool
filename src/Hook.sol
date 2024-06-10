@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.22;
 
-import {IERC20Minimal} from "../../src/interfaces/external/IERC20Minimal.sol";
-
 import {SwapMath} from '@uniswap/v4-core/src/libraries/SwapMath.sol';
 import {Hooks, IHooks} from '@uniswap/v4-core/src/libraries/Hooks.sol';
 import {BalanceDelta} from '@uniswap/v4-core/src/types/BalanceDelta.sol';
@@ -11,6 +9,7 @@ import {PoolId, PoolIdLibrary} from '@uniswap/v4-core/src/types/PoolId.sol';
 import {PoolKey} from '@uniswap/v4-core/src/types/PoolKey.sol';
 import {BeforeSwapDelta, toBeforeSwapDelta} from '@uniswap/v4-core/src/types/BeforeSwapDelta.sol';
 
+import {IERC20Minimal} from '@uniswap/v4-core/src/interfaces/external/IERC20Minimal.sol';
 import {IPoolManager} from '@uniswap/v4-core/src/interfaces/IPoolManager.sol';
 
 import {BaseHook} from '@uniswap-periphery/BaseHook.sol';

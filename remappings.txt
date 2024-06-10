@@ -1,12 +1,2 @@
-@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
-@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/
 @solady/=lib/solady/src/
 @uniswap/v4-core/=lib/v4-core/
-@uniswap-periphery/=lib/v4-periphery/contracts/
-
-lssvm2=lib/lssvm2/src/
-seaport-types/=lib/seaport-types/
-
-@flayer/=src/contracts/
-@flayer-interfaces/=src/interfaces/
-@flayer-scripts/=script/
