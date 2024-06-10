@@ -1,0 +1,67 @@
+[profile.default]
+auto_detect_solc = false
+bytecode_hash = "none"
+ffi = true
+fs_permissions = [
+  # Required for `deployCodeTo` in tests for custom hook address
+  { access = "read", path = "./out/" },
+
+  # Required for deployment scripts
+  { access = "read", path = "./.privatekey" }
+]
+gas_reports = ["CollectionToken","LinearRangeCurve","CollectionShutdown","Listings","ListingsMock","Locker","LockerMock"]
+libs = ["lib"]
+optimizer = true
+optimizer_runs = 10_000
+out = "out"
+solc = "0.8.25"
+evm_version = "cancun"
+src = "src"
+test = "test"
+
+# 2394: Ignores UV4 tstore warning: https://github.com/ethereum/solidity/issues/14817
+# 3860, 5574: Ignores file size warnings
+# 5667: Ignores unused function parameters
+ignored_error_codes = [2394, 3860, 5574, 5667]
+
+[profile.ci]
+verbosity = 4
+
+[fuzz]
+runs = 256
+
+[rpc_endpoints]
+sepolia = "${SEPOLIA_RPC_URL}"
+goerli = "${GOERLI_RPC_URL}"
+mainnet = "${MAINNET_RPC_URL}"
+
+[etherscan]
+sepolia = {key = "${ETHERSCAN_API_KEY}"}
+goerli = {key = "${ETHERSCAN_API_KEY}"}
+mainnet = {key = "${ETHERSCAN_API_KEY}"}
+
+[doc]
+out = "docs"
+title = "Flayer"
+book = "./book.toml"
+repository = "https://github.com/FloorDAO/flayer"
+ignore = ["**/*.t.sol"]
+
+[invariant]
+runs = 2048
+depth = 15
+fail_on_revert = false
+
+[fmt]
+line_length = 140
+tab_width = 4
+bracket_spacing = false
+int_types = "short"
+multiline_func_header = "attributes_first"
+quote_style = "single"
+number_underscore = "preserve"
+override_spacing = true
+wrap_comments = false
+ignore = []
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
