@@ -164,11 +164,7 @@ contract InternalSwapPool is BaseHook {
             (uint160 sqrtPriceX96,,,) = poolManager.getSlot0(poolId);
 
             // We need to vary our swap logic based on if we have an exact input or output
-            if (params.amountSpecified >= 0) {
-                // token0 for token1 with Exact Output for Input (amountSpecified = positive value representing token1):
-                // -> the user is specifying their swap amount in terms of token1, so the specifiedCurrency is token1
-                // -> the unspecifiedCurrency is token0
-    
+            if (params.amountSpecified >= 0) {    
                 // Since we have an amount of token1 specified, we can determine the maximum
                 // amount that we can transact from our pool fees. We do this by taking the
                 // max value of either the pool token1 fees or the amount specified to swap for.
