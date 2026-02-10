@@ -158,7 +158,7 @@ contract InternalSwapPool is BaseHook {
 
         // 1. Swapping TOKEN for ETH
         // 2. We have TOKEN fees stored inside the hook
-        if (!params.zeroForOne && _poolFees[poolId].amount1 != 0) {
+        if (params.zeroForOne && _poolFees[poolId].amount1 != 0) {
 
             // Get the current price for our pool to use as a price basis for our swap
             (uint160 sqrtPriceX96,,,) = poolManager.getSlot0(poolId);
