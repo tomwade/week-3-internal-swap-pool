@@ -1,1 +1,5 @@
-{}
+{
+  "lib/v4-periphery": {
+    "rev": "7ebd04b161745b75ed0c24ba2df3bc7c25f65606"
+  }
+}

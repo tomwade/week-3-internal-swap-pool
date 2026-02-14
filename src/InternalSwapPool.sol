@@ -14,7 +14,7 @@ import {CurrencySettler} from '@uniswap/v4-core/test/utils/CurrencySettler.sol';
 
 import {IPoolManager} from '@uniswap/v4-core/src/interfaces/IPoolManager.sol';
 
-import {BaseHook} from 'v4-periphery/src/utils/BaseHook.sol';
+import {BaseHook} from 'lib/v4-hooks-public/src/base/BaseHook.sol';
 
 
 /**
